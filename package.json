@@ -1,0 +1,50 @@
+{
+  "name": "scam-shield-core",
+  "version": "0.1.0",
+  "description": "Spanish-first, offline-capable scam detector for payment links and messages in Nicaragua and Latin America, with an optional pluggable LLM layer.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "eval": "tsx scripts/eval.ts",
+    "prepublishOnly": "npm run build && npm test"
+  },
+  "keywords": [
+    "scam",
+    "phishing",
+    "fraud",
+    "smishing",
+    "nicaragua",
+    "latam",
+    "spanish",
+    "security",
+    "llm"
+  ],
+  "author": "Alejandro Arana / FinanciLab",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "vitest": "^5.1.0"
+  }
+}
